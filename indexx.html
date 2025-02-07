@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+</head>
+<style>
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+    }
+    .click{
+        color: white;
+        background-color: #e72063;
+        border: solid #c60948 3px;
+    border-radius: 9px;
+    padding: 1%;
+    font-size: 25px;
+        margin: 12%;
+        position: absolute;
+        left: 37%;
+    bottom: 34%;
+    
+        transform: translate(-50%, -50%);
+    }
+    .dancing-script-heading {
+  font-family: "Dancing Script", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  
+}
+
+.heading{
+    color: #e72063;
+    position: absolute;
+        left: 37%;
+    bottom: 34%;
+}
+    
+</style>
+<body>
+    <div class="container">
+        <button class="click">click</button>
+        <h1 class="rose"></h1>
+        <h1 class="heading"></h1>
+    </div>
+</body>
+<script>
+    const button=document.querySelector(".click");
+    let first=false;
+    const heading=document.querySelector(".heading");
+    const rose=document.querySelector(".rose");
+    button.addEventListener("click",function(e){
+        if(!first){
+            const mes="Happy Rose Day Bae🌹";
+            for(let i=0;i<mes.length;i++){
+                setTimeout(()=>{
+                    heading.innerHTML+=mes[i];
+                },i*100);
+            }
+            button.innerHTML="Pick Your Rose";
+            first=true;
+        }else {
+            rose.innerHTML+="🌹";
+        }
+    })
+</script>
+</html>
